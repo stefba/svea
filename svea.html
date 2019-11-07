@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width">
+<style>
+    h1 a,
+    body {
+        color:black;
+        /*
+        background: #faffd3;
+        background: #ffefd3;
+        background: #244f29;
+        color:yellow;
+        */
+    }
+    body {
+        font-family:'Roboto', sans-serif;
+        line-height:1.4;
+    }
+    h1, h3 {
+        font-weight:normal;
+    }
+    h1 {
+        font-weight:500;
+        font-weight:400;
+        /*
+        letter-spacing:.1rem;
+        */
+        font-style:italic;
+        color:#217e45;
+        font-size:5rem;
+        margin:4rem 0 0;
+        line-height:1;
+    }
+    .lead {
+        font-family:"Roboto Mono", sans-serif;
+        font-size:1.25rem;
+        //font-style:italic;
+        margin-top:.625rem;
+        margin-bottom:4rem;
+    }
+    h2 {
+        margin:4rem 0 2rem;
+        font-weight:normal;
+        text-transform:uppercase;
+        font-size:1rem;
+        letter-spacing:.08rem;
+    }
+    h3 {
+        font-size:1.125rem;
+        font-weight:bold;
+        margin:0;
+    }
+    .year {
+        margin:2rem 0;
+    }
+    img {
+        max-width:100%;
+    }
+    a {
+        color:orange;
+        color:blue;
+        text-decoration:none;
+    }
+    .about {
+        font-size:2.875rem;
+        /*
+           */
+        max-width:80rem;
+        margin:0 auto;
+    }
+    .about a {
+        color:black;
+        text-decoration:underline;
+    }
+
+    .explain {
+        font-size:2rem;
+    }
+    @media(min-width:36rem) {
+        .work {
+            width: 49%;
+            display:inline-block;
+        }
+    }
+</style>
+<title>{{.Info.Title}} - {{.Info.Job}}</title>
+
+<h1><a href="{{.Home}}">{{.Info.Title}}</a></h1>
+<div class="lead">{{.Info.Job}}</div>
+
+<!--
+{{range .Sections}}
+<a href="{{.Href}}">{{.Title}}</a>
+{{end}}
+-->
+
+
+<!--
+<h2>Works</h2>
+-->
+<section>
+    {{range .Work}}
+    <article class="work">
+        <h3>{{.Title}}</h3>
+        {{.Role}}
+        {{.Type}}
+        <a target="_blank" href="{{.Link}}"><img src="{{.Thumb}}"></a>
+    </article>
+    {{end}}
+</section>
+
+
+<div class="about">
+    {{.About}}
+</div>
+
+<div>
+    {{range .Experience}}
+        <h3 class="year">{{.Year}}</h3>
+        {{range .Entries}}
+            <li>
+                <em>{{.Title}}</em> {{.Extra}}<br>
+                {{.Role}} - {{.Type}}
+            </li>
+        {{end}}
+    {{end}}
+</div>
