@@ -20,7 +20,7 @@ type site struct {
 	//Contact
 }
 
-var root = "."
+var root = root+""
 
 var siteEn = &site{}
 var siteDe = &site{}
@@ -28,7 +28,7 @@ var tmpl = &template.Template{}
 
 func main() {
 
-	path := flag.String("path", ".", "set the root path of this app")
+	path := flag.String("path", root+"", "set the root path of this app")
 	flag.Parse()
 
 	root = *path
@@ -52,8 +52,8 @@ func renderEn(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), 500)
 		return
 	}
-	if filepath.Ext(r.URL.Path) == ".jpg" {
-		http.ServeFile(w, r, "./data"+r.URL.Path)
+	if filepath.Ext(r.URL.Path) == root+"jpg" {
+		http.ServeFile(w, r, root+"/data"+r.URL.Path)
 		return
 	}
 	err = tmpl.Execute(w, siteEn)
@@ -68,8 +68,8 @@ func renderDe(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), 500)
 		return
 	}
-	if filepath.Ext(r.URL.Path) == ".jpg" {
-		http.ServeFile(w, r, "./data"+r.URL.Path)
+	if filepath.Ext(r.URL.Path) == root+"jpg" {
+		http.ServeFile(w, r, root+"/data"+r.URL.Path)
 		return
 	}
 	err = tmpl.Execute(w, siteDe)
@@ -79,7 +79,7 @@ func renderDe(w http.ResponseWriter, r *http.Request) {
 }
 
 func serveStatic(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "."+r.URL.Path)
+		http.ServeFile(w, r, root+""+r.URL.Path)
 	}
 /*
 func readSort() ([]string, error) {
