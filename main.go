@@ -10,6 +10,7 @@ import (
 
 type site struct {
 	Home       string
+	Langs      []*link
 	Info       *info
 	Experience []*year
 	Work       []*work

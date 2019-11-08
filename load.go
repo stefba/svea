@@ -35,6 +35,7 @@ func loadData() error {
 
 	siteDe = &site{
 		Home:       "/de/",
+		Langs:		langNav("de"),
 		Sections:   sectionsLangs["de"],
 		Info:       info["de"],
 		Work:       works["de"],
@@ -44,6 +45,7 @@ func loadData() error {
 
 	siteEn = &site{
 		Home:       "/",
+		Langs:		langNav("en"),
 		Sections:   sectionsLangs["en"],
 		Info:       info["en"],
 		Work:       works["en"],

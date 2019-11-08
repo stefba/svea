@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width">
 <style>
+    .active {
+        border-bottom:2px #000 solid;
+    }
     h1 a,
     body {
         color:black;
@@ -137,6 +140,10 @@
 <title>{{.Info.Title}} - {{.Info.Job}}</title>
 
 <main>
+
+    {{range .Langs}}
+    <a {{if .IsActive}}class="active" {{end}}href="{{.Href}}">{{.Name}}</a>
+    {{end}}
 
 <h1><a href="{{.Home}}">{{.Info.Title}}</a></h1>
 <div class="lead">{{.Info.Job}}</div>
