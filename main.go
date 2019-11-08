@@ -20,7 +20,7 @@ type site struct {
 	//Contact
 }
 
-var root = root+""
+var root = "."
 
 var siteEn = &site{}
 var siteDe = &site{}
@@ -52,7 +52,7 @@ func renderEn(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), 500)
 		return
 	}
-	if filepath.Ext(r.URL.Path) == root+"jpg" {
+	if filepath.Ext(r.URL.Path) == ".jpg" {
 		http.ServeFile(w, r, root+"/data"+r.URL.Path)
 		return
 	}
@@ -68,7 +68,7 @@ func renderDe(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), 500)
 		return
 	}
-	if filepath.Ext(r.URL.Path) == root+"jpg" {
+	if filepath.Ext(r.URL.Path) == ".jpg" {
 		http.ServeFile(w, r, root+"/data"+r.URL.Path)
 		return
 	}
