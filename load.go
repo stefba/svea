@@ -13,22 +13,22 @@ func load() error {
 }
 
 func loadData() error {
-	info, err := readInfo("./data/info.yaml")
+	info, err := readInfo(root+"/data/info.yaml")
 	if err != nil {
 		return err
 	}
 
-	works, err := readWorks("./data/work")
+	works, err := readWorks(root+"/data/work")
 	if err != nil {
 		return err
 	}
 
-	exp, err := readExperiences("./data/experience")
+	exp, err := readExperiences(root+"/data/experience")
 	if err != nil {
 		return err
 	}
 
-	about, err := readAbout("./data/about/about.md")
+	about, err := readAbout(root+"/data/about/about.md")
 	if err != nil {
 		return err
 	}
@@ -57,7 +57,7 @@ func loadData() error {
 }
 
 func loadTemplate() error {
-	t, err := template.ParseFiles("./svea.html")
+	t, err := template.ParseFiles(root+"/svea.html")
 	if err != nil {
 		return err
 	}

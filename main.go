@@ -2,6 +2,7 @@ package main
 
 import (
 	//"strings"
+	"flag"
 	"log"
 	"net/http"
 	"path/filepath"
@@ -26,6 +27,11 @@ var siteDe = &site{}
 var tmpl = &template.Template{}
 
 func main() {
+
+	path := flag.String("path", ".", "set the root path of this app")
+	flag.Parse()
+
+	root = *path
 
 	err := load()
 	if err != nil {
