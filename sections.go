@@ -30,11 +30,11 @@ var sectionsLangs = map[string]sections{
 	"en": []*section{
 		&section{
 			Key:   "work",
-			Title: "Work",
+			Title: "Works",
 		},
 		&section{
 			Key:   "about",
-			Title: "About",
+			Title: "About me",
 		},
 		&section{
 			Key:   "contact",
@@ -52,7 +52,7 @@ var sectionsLangs = map[string]sections{
 		},
 		&section{
 			Key:   "about",
-			Title: "Über",
+			Title: "Über mich",
 		},
 		&section{
 			Key:   "contact",

@@ -14,7 +14,7 @@ type site struct {
 	Experience []*year
 	Work       []*work
 	About      string
-	Sections   []*section
+	Sections   sections
 	//Contact
 }
 

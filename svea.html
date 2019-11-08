@@ -9,7 +9,11 @@
         background: #ffefd3;
         background: #244f29;
         color:yellow;
+        background: #faffd3;
+        background: #faffd3;
+        color:#ffe700;
         */
+        background:#ffe700;
     }
     body {
         font-family:'Roboto', sans-serif;
@@ -19,7 +23,6 @@
         font-weight:normal;
     }
     h1 {
-        font-weight:500;
         font-weight:400;
         /*
         letter-spacing:.1rem;
@@ -32,28 +35,47 @@
     }
     .lead {
         font-family:"Roboto Mono", sans-serif;
-        font-size:1.25rem;
+        font-size:1.375rem;
         //font-style:italic;
         margin-top:.625rem;
         margin-bottom:4rem;
     }
     h2 {
         margin:4rem 0 2rem;
+        /*
         font-weight:normal;
         text-transform:uppercase;
-        font-size:1rem;
+        font-size:.875rem;
         letter-spacing:.08rem;
+        */
+        font-size:3.25rem;
+        font-style:italic;
+        font-weight:400;
     }
-    h3 {
-        font-size:1.125rem;
-        font-weight:bold;
-        margin:0;
+
+    #work {
+    }
+    .work-title {
+        font-size:1.25rem;
+        font-weight:500;
+        margin:.5rem 0 .125rem;
+        font-style:italic;
     }
     .year {
+        font-weight:400;
+        font-size:1.25rem;
         margin:2rem 0;
     }
+    /*
+    .year span {
+        border-bottom:2px black solid;
+    }
+    */
     img {
         max-width:100%;
+    }
+    img:hover {
+        opacity:.9;
     }
     a {
         color:orange;
@@ -61,28 +83,60 @@
         text-decoration:none;
     }
     .about {
-        font-size:2.875rem;
+        font-family:"Roboto Mono", sans-serif;
+        line-height:1.5;
+        font-size:2.1rem;
         /*
+        font-family:"Roboto Condensed", sans-serif;
            */
-        max-width:80rem;
         margin:0 auto;
+        max-width:70rem;
     }
     .about a {
         color:black;
         text-decoration:underline;
     }
 
-    .explain {
-        font-size:2rem;
+    .experiences {
+        list-style-position:outside;
+        list-style:none;
+        padding:0;
+        font-size:1.125rem;
+    }
+    .exp-title {
+        font-size:1.25rem;
+        font-weight:500;
+    }
+    .exp-extra {
+        margin-left:.5rem;
+        font-size:.875rem;
+    }
+    .exp-role {
+        font-style:italic;
+        margin-top:.125rem;
+        font-size:1.0625rem;
+        display:inline-block;
+    }
+    .entry {
+        margin:0 0 1rem;
     }
     @media(min-width:36rem) {
+        main {
+            max-width:104rem;
+            margin:0 auto;
+        }
+        #work {
+            display:flex;
+            justify-content:space-between;
+        }
         .work {
-            width: 49%;
-            display:inline-block;
+            max-width:45%;
         }
     }
 </style>
 <title>{{.Info.Title}} - {{.Info.Job}}</title>
+
+<main>
 
 <h1><a href="{{.Home}}">{{.Info.Title}}</a></h1>
 <div class="lead">{{.Info.Job}}</div>
@@ -95,32 +149,41 @@
 
 
 <!--
-<h2>Works</h2>
+<h2>{{.Sections.Title "work"}}</h2>
 -->
-<section>
+
+<section id="work">
     {{range .Work}}
     <article class="work">
-        <h3>{{.Title}}</h3>
-        {{.Role}}
-        {{.Type}}
+        <!--
+        -->
         <a target="_blank" href="{{.Link}}"><img src="{{.Thumb}}"></a>
+        <h3 class="work-title">{{.Title}}</h3>
+        {{.Role}},&ensp;{{.Type}}
     </article>
     {{end}}
 </section>
 
+<h2>{{.Sections.Title "about"}}</h2>
 
 <div class="about">
     {{.About}}
 </div>
 
+<h2>{{.Sections.Title "experience"}}</h2>
+
 <div>
     {{range .Experience}}
-        <h3 class="year">{{.Year}}</h3>
+    <h3 class="year"><span>{{.Year}}</span></h3>
+        <ul class="experiences">
         {{range .Entries}}
-            <li>
-                <em>{{.Title}}</em> {{.Extra}}<br>
-                {{.Role}} - {{.Type}}
+            <li class="entry">
+                <span class="exp-title">{{.Title}}</span>
+                <span class="exp-extra">{{.Extra}}</span><br>
+                <span class="exp-role">{{.Role}},&ensp;{{.Type}}</span>
             </li>
         {{end}}
+        </ul>
     {{end}}
 </div>
+</main>
