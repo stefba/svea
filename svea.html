@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width">
+<link rel="icon" type="image/png" href="/static/icon.png" sizes="192x192">
 <style>
     .active {
         border-bottom:2px #000 solid;
     }
     .langs {
+        font-style:italic;
         text-align:right;
     }
-    h1 a,
-    body {
+    .langs a {
+        margin-left:.25rem;
+    }
+    h1 a {
+        /*
+    .year,
+    h2,
+        */
+        color:red;
         color:black;
+        color: #ffc70e;
+        color: #ffcf00;
+        color: #ffc400;
+    }
+    body {
         /*
         background: #faffd3;
         background: #ffefd3;
@@ -18,13 +32,29 @@
         background: #faffd3;
         background: #faffd3;
         color:#ffe700;
-        */
         background:#ffe700;
         background:#1300c6;
         color:#fbe400;
+        background: #00741d;
+        color:white;
+        background: #ce305e;
+        background:#c41913;
+        background: #ce305e;
+        background:red;
+        */
+    }
+    .langs a,
+    h1 a,
+    .work-title a {
+        text-decoration:none;
+    }
+    a {
+        color:orange;
+        color:black;
     }
     body {
         font-family:'Roboto', sans-serif;
+        font-family:'Public Sans', sans-serif;
         line-height:1.4;
     }
     h1, h3 {
@@ -34,23 +64,27 @@
         /*
         font-weight:500;
         */
+        text-align:center;
         font-style:italic;
-        font-size:3.5rem;
-        margin:1.5rem 0 0;
-        line-height:1;
+        font-size:6.75rem;
+        margin:1.5rem 0 0rem;
+        line-height:.925;
     }
     .lead {
-        font-family:"Roboto Mono", sans-serif;
+        font-family:"Roboto Mono", monospace;
+        font-family:"EB Garamond", serif;
         font-weight:500;
         /*
+        color: #ff2a00;
         font-family:"Roboto Mono", sans-serif;
         font-style:italic;
         */
         font-size:1.125rem;
-        margin-top:.625rem;
+        margin-top:.5rem;
         margin-bottom:4rem;
     }
     h2 {
+        line-height:1;
         margin:4rem 0 2rem;
         /*
         font-weight:normal;
@@ -64,21 +98,29 @@
     }
 
     #work {
+        margin:4.75rem 0 4.5rem;
     }
     .work-info {
         margin:.25rem 0 .75rem;
     }
     .work-title {
-        font-size:1.25rem;
-        font-family:"Roboto Mono", sans-serif;
-        font-weight:500;
         margin:0 0 .125rem;
+        font-size:1.25rem;
+        /*
+        font-family:"Roboto Mono", monospace;
+        font-style:italic;
+        font-size:1.75rem;
+        */
     }
     .work-role {
-        font-size:1.125rem;
+        font-size:1.0625rem;
         font-style:italic;
     }
     .year {
+        /*
+        font-family:"EB Garamond", serif;
+        */
+        font-style:italic;
         font-weight:400;
         font-size:1.25rem;
         margin:2rem 0;
@@ -94,23 +136,19 @@
     img:hover {
         opacity:.9;
     }
-    a {
-        color:orange;
-        color:blue;
-        text-decoration:none;
-    }
     .about {
+        font-family:"EB Garamond", serif;
         font-size:1.3rem;
+        font-size:1.625rem;
+        line-height:1.4;
         /*
         text-align:justify;
         font-family:"Roboto Condensed", sans-serif;
            */
         margin:0 auto;
+        /*
         max-width:70rem;
-    }
-    .about a {
-        color:black;
-        text-decoration:underline;
+        */
     }
 
     .experiences {
@@ -126,10 +164,16 @@
         /*
            font-weight:500;
            */
+    }
+    .exp-title,
+    .work-title {
         font-weight:500;
-        font-family:"Roboto Mono", sans-serif;
+        font-family:"Roboto Mono", monospace;
+        font-weight:600;
+        font-family:"Public Sans", monospace;
     }
     .exp-extra {
+        font-family:"EB Garamond", serif;
         margin-left:.5rem;
         font-size:.875rem;
         display:inline-block;
@@ -144,21 +188,33 @@
         margin:0 0 1rem;
     }
     @media(min-width:48rem) {
+        h1 {
+            line-height:1;
+            font-size:12.5rem;
+            text-align:center;
+        }
+        .work-title,
         .exp-title {
-            font-size:1.25rem;
+            font-size:1.4375rem;
         }
         .exp-extra {
-            font-size:1.0625rem;
+            font-size:1.25rem;
             margin-left:.625rem;
         }
+        .work-role,
         .exp-role {
-            font-size:1.125rem;
+            font-size:1.25rem;
+            /*
+            */
         }
         .experiences {
             overflow-x:auto;
+            /*
+            margin-left:24rem;
+            */
         }
         main {
-            max-width:104rem;
+            max-width:74rem;
             margin:0 auto;
         }
         #work {
@@ -166,25 +222,45 @@
             justify-content:space-between;
         }
         .work {
-            max-width:45%;
+            max-width:42.5%;
         }
         .about {
-            font-size:2.1rem;
+            font-size:2.25rem;
+            margin-bottom:5.5rem;
         }
+        .year,
         h2 {
-            font-size:3.25rem;
+            margin:4rem 0 0;
+            font-size:2.5rem;
+            font-size:4rem;
+            /*
+            font-family:"Roboto Mono", monospace;
+            font-style:normal;
+            font-weight:500;
+            */
+        }
+        .year {
+            font-size:2.875rem;
+            margin-top:2rem;
+            margin-bottom:2rem;
         }
         .work-title {
             margin:.5rem 0 .125rem;
         }
+        .lead {
+            font-size:1.25rem;
+        }
     }
     @media(min-width:90rem) {
-        h1 {
-            font-size:5rem;
+        .work {
+            max-width:40%;
         }
-        .lead {
-            font-size:1.375rem;
+        /*
+        main {
+            max-width:104rem;
+            margin:0 auto;
         }
+        */
     }
 </style>
 <title>{{.Info.Title}} - {{.Info.Job}}</title>
@@ -199,24 +275,23 @@
 
 <h1><a href="{{.Home}}">{{.Info.Title}}</a></h1>
 <div class="lead">{{.Info.Job}}</div>
-
+<!--
+-->
 <!--
 {{range .Sections}}
 <a href="{{.Href}}">{{.Title}}</a>
 {{end}}
+<h2><span>{{.Sections.Title "work"}}</span></h2>
 -->
 
 
-<!--
-<h2>{{.Sections.Title "work"}}</h2>
--->
 
 <section id="work">
     {{range .Work}}
     <article class="work">
         <a target="_blank" href="{{.Link}}"><img src="{{.Thumb}}"></a>
         <div class="work-info">
-            <h3 class="work-title">{{.Title}}</h3>
+            <h3 class="work-title"><a target="_blank" href="{{.Link}}">{{.Title}}</a></h3>
             <div class="work-role">
                 {{.Role}},&ensp;{{.Type}}
             </div>
@@ -225,13 +300,15 @@
     {{end}}
 </section>
 
-<h2>{{.Sections.Title "about"}}</h2>
+<h2><span>{{.Sections.Title "about"}}</span></h2>
 
 <div class="about">
     {{.About}}
 </div>
 
-<h2>{{.Sections.Title "experience"}}</h2>
+<!--
+<h2><span>{{.Sections.Title "experience"}}</span></h2>
+-->
 
 <div>
     {{range .Experience}}

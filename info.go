@@ -75,18 +75,18 @@ func readAbout(path string) (map[string]string, error) {
 		return nil, err
 	}
 
-	de, err := hyph.HyphenateText(string(texts["de"]), "de")
+	en, err := hyph.HyphenateText(string(blackfriday.MarkdownCommon(texts["en"])), "en")
 	if err != nil {
 		return nil, err
 	}
 
-	en, err := hyph.HyphenateText(string(texts["en"]), "en")
+	de, err := hyph.HyphenateText(string(blackfriday.MarkdownCommon(texts["de"])), "de")
 	if err != nil {
 		return nil, err
 	}
 
 	return map[string]string{
-		"de": string(blackfriday.MarkdownCommon([]byte(de))),
-		"en": string(blackfriday.MarkdownCommon([]byte(en))),
+		"de": de,
+		"en": en,
 	}, nil
 }

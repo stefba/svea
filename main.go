@@ -35,6 +35,7 @@ func main() {
 
 	http.HandleFunc("/", renderEn)
 	http.HandleFunc("/de/", renderDe)
+	http.HandleFunc("/static/", serveStatic)
 	http.ListenAndServe(":8444", nil)
 
 }
@@ -71,6 +72,9 @@ func renderDe(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func serveStatic(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "."+r.URL.Path)
+	}
 /*
 func readSort() ([]string, error) {
 	b, err := ioutil.ReadFile(root + "/data/sort")
