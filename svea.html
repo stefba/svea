@@ -2,6 +2,30 @@
 <meta name="viewport" content="width=device-width">
 <link rel="icon" type="image/png" href="/static/icon.png" sizes="192x192">
 <style>
+    @font-face {
+        font-family: "EB Garamond";
+        font-style: normal;
+        font-weight: normal;
+        font-display:fallback;
+        src: url("/static/fonts/EBGaramond12-Regular.woff2?v=b") format("woff2"),
+             url("/static/fonts/EBGaramond12-Regular.woff?v=b") format("woff");
+    }
+    @font-face {
+        font-family: "Public Sans";
+        font-style: normal;
+        font-weight: 600;
+        font-display:fallback;
+        src: url("/static/fonts/PublicSans-SemiBold.woff2?v=b") format("woff2"),
+             url("/static/fonts/PublicSans-SemiBold.woff?v=b") format("woff");
+    }
+    @font-face {
+        font-family: "Public Sans";
+        font-style: italic;
+        font-weight: normal;
+        font-display:fallback;
+        src: url("/static/fonts/PublicSans-Italic.woff2?v=b") format("woff2"),
+             url("/static/fonts/PublicSans-Italic.woff?v=b") format("woff");
+    }
     .active {
         border-bottom:2px #000 solid;
     }
@@ -68,37 +92,31 @@
         font-style:italic;
         font-size:6.75rem;
         margin:1.5rem 0 0rem;
-        line-height:.925;
+        line-height:.9;
     }
     .lead {
-        font-family:"Roboto Mono", monospace;
         font-family:"EB Garamond", serif;
-        font-weight:500;
         /*
         color: #ff2a00;
         font-family:"Roboto Mono", sans-serif;
         font-style:italic;
         */
-        font-size:1.125rem;
-        margin-top:.5rem;
-        margin-bottom:4rem;
+        font-size:1.5rem;
+        margin-top:.75rem;
     }
     h2 {
         line-height:1;
-        margin:4rem 0 2rem;
-        /*
-        font-weight:normal;
-        text-transform:uppercase;
-        font-size:.875rem;
-        letter-spacing:.08rem;
-        */
-        font-size:2.5rem;
+        margin:4.5rem 0 2rem;
+        font-size:3.5rem;
         font-style:italic;
         font-weight:400;
     }
 
     #work {
-        margin:4.75rem 0 4.5rem;
+        margin:3rem 0 2rem;
+    }
+    .work {
+        margin-bottom:3.5rem;
     }
     .work-info {
         margin:.25rem 0 .75rem;
@@ -117,12 +135,9 @@
         font-style:italic;
     }
     .year {
-        /*
-        font-family:"EB Garamond", serif;
-        */
         font-style:italic;
         font-weight:400;
-        font-size:1.25rem;
+        font-size:2.5rem;
         margin:2rem 0;
     }
     /*
@@ -138,17 +153,9 @@
     }
     .about {
         font-family:"EB Garamond", serif;
-        font-size:1.3rem;
         font-size:1.625rem;
-        line-height:1.4;
-        /*
-        text-align:justify;
-        font-family:"Roboto Condensed", sans-serif;
-           */
-        margin:0 auto;
-        /*
-        max-width:70rem;
-        */
+        line-height:1.35;
+        margin:0 auto 4.5rem;
     }
 
     .experiences {
@@ -159,29 +166,25 @@
         padding:0;
         font-size:1.125rem;
     }
-    .exp-title {
-        font-size:1.0625rem;
-        /*
-           font-weight:500;
-           */
-    }
     .exp-title,
     .work-title {
         font-weight:500;
         font-family:"Roboto Mono", monospace;
         font-weight:600;
         font-family:"Public Sans", monospace;
+        font-size:1.375rem;
     }
+
     .exp-extra {
         font-family:"EB Garamond", serif;
         margin-left:.5rem;
-        font-size:.875rem;
+        font-size:1.25rem;
         display:inline-block;
     }
     .exp-role {
         font-style:italic;
         margin-top:.125rem;
-        font-size:1.0625rem;
+        font-size:1.125rem;
         display:inline-block;
     }
     .entry {
@@ -218,6 +221,7 @@
             margin:0 auto;
         }
         #work {
+        margin:4.75rem 0 4.5rem;
             display:flex;
             justify-content:space-between;
         }
@@ -225,6 +229,7 @@
             max-width:42.5%;
         }
         .about {
+            line-height:1.4;
             font-size:2.25rem;
             margin-bottom:5.5rem;
         }
@@ -233,11 +238,6 @@
             margin:4rem 0 0;
             font-size:2.5rem;
             font-size:4rem;
-            /*
-            font-family:"Roboto Mono", monospace;
-            font-style:normal;
-            font-weight:500;
-            */
         }
         .year {
             font-size:2.875rem;
@@ -246,9 +246,6 @@
         }
         .work-title {
             margin:.5rem 0 .125rem;
-        }
-        .lead {
-            font-size:1.25rem;
         }
     }
     @media(min-width:90rem) {
