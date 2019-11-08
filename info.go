@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/russross/blackfriday"
 	"gopkg.in/yaml.v3"
+	"svea/hyph"
 )
 
 type info struct {
@@ -74,8 +75,18 @@ func readAbout(path string) (map[string]string, error) {
 		return nil, err
 	}
 
+	de, err := hyph.HyphenateText(string(texts["de"]), "de")
+	if err != nil {
+		return nil, err
+	}
+
+	en, err := hyph.HyphenateText(string(texts["en"]), "en")
+	if err != nil {
+		return nil, err
+	}
+
 	return map[string]string{
-		"de": string(blackfriday.MarkdownCommon(texts["de"])),
-		"en": string(blackfriday.MarkdownCommon(texts["en"])),
+		"de": string(blackfriday.MarkdownCommon([]byte(de))),
+		"en": string(blackfriday.MarkdownCommon([]byte(en))),
 	}, nil
 }

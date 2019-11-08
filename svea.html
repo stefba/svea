@@ -20,6 +20,8 @@
         color:#ffe700;
         */
         background:#ffe700;
+        background:#1300c6;
+        color:#fbe400;
     }
     body {
         font-family:'Roboto', sans-serif;
@@ -29,17 +31,22 @@
         font-weight:normal;
     }
     h1 {
-        font-weight:400;
+        /*
+        font-weight:500;
+        */
         font-style:italic;
-        color:#217e45;
         font-size:3.5rem;
         margin:1.5rem 0 0;
         line-height:1;
     }
     .lead {
         font-family:"Roboto Mono", sans-serif;
-        font-size:1em;
-        //font-style:italic;
+        font-weight:500;
+        /*
+        font-family:"Roboto Mono", sans-serif;
+        font-style:italic;
+        */
+        font-size:1.125rem;
         margin-top:.625rem;
         margin-bottom:4rem;
     }
@@ -51,17 +58,24 @@
         font-size:.875rem;
         letter-spacing:.08rem;
         */
-        font-size:3.25rem;
+        font-size:2.5rem;
         font-style:italic;
         font-weight:400;
     }
 
     #work {
     }
+    .work-info {
+        margin:.25rem 0 .75rem;
+    }
     .work-title {
         font-size:1.25rem;
+        font-family:"Roboto Mono", sans-serif;
         font-weight:500;
-        margin:.5rem 0 .125rem;
+        margin:0 0 .125rem;
+    }
+    .work-role {
+        font-size:1.125rem;
         font-style:italic;
     }
     .year {
@@ -86,10 +100,9 @@
         text-decoration:none;
     }
     .about {
-        font-family:"Roboto Mono", sans-serif;
-        line-height:1.5;
-        font-size:1.4rem;
+        font-size:1.3rem;
         /*
+        text-align:justify;
         font-family:"Roboto Condensed", sans-serif;
            */
         margin:0 auto;
@@ -101,18 +114,25 @@
     }
 
     .experiences {
+        overflow-x:scroll;
+        white-space:nowrap;
         list-style-position:outside;
         list-style:none;
         padding:0;
         font-size:1.125rem;
     }
     .exp-title {
-        font-size:1.25rem;
+        font-size:1.0625rem;
+        /*
+           font-weight:500;
+           */
         font-weight:500;
+        font-family:"Roboto Mono", sans-serif;
     }
     .exp-extra {
         margin-left:.5rem;
         font-size:.875rem;
+        display:inline-block;
     }
     .exp-role {
         font-style:italic;
@@ -124,6 +144,19 @@
         margin:0 0 1rem;
     }
     @media(min-width:48rem) {
+        .exp-title {
+            font-size:1.25rem;
+        }
+        .exp-extra {
+            font-size:1.0625rem;
+            margin-left:.625rem;
+        }
+        .exp-role {
+            font-size:1.125rem;
+        }
+        .experiences {
+            overflow-x:auto;
+        }
         main {
             max-width:104rem;
             margin:0 auto;
@@ -137,6 +170,12 @@
         }
         .about {
             font-size:2.1rem;
+        }
+        h2 {
+            font-size:3.25rem;
+        }
+        .work-title {
+            margin:.5rem 0 .125rem;
         }
     }
     @media(min-width:90rem) {
@@ -175,11 +214,13 @@
 <section id="work">
     {{range .Work}}
     <article class="work">
-        <!--
-        -->
         <a target="_blank" href="{{.Link}}"><img src="{{.Thumb}}"></a>
-        <h3 class="work-title">{{.Title}}</h3>
-        {{.Role}},&ensp;{{.Type}}
+        <div class="work-info">
+            <h3 class="work-title">{{.Title}}</h3>
+            <div class="work-role">
+                {{.Role}},&ensp;{{.Type}}
+            </div>
+        </div>
     </article>
     {{end}}
 </section>
