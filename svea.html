@@ -39,7 +39,8 @@
         text-align:right;
     }
     .langs a {
-        margin-left:.375rem;
+        margin-right:.375rem;
+        padding:.125rem .125rem .0625rem;
     }
     h1 a {
         /*
@@ -51,26 +52,6 @@
         color: #ffc70e;
         color: #ffcf00;
         color: #ffc400;
-    }
-    body {
-        /*
-        background: #faffd3;
-        background: #ffefd3;
-        background: #244f29;
-        color:yellow;
-        background: #faffd3;
-        background: #faffd3;
-        color:#ffe700;
-        background:#ffe700;
-        background:#1300c6;
-        color:#fbe400;
-        background: #00741d;
-        color:white;
-        background: #ce305e;
-        background:#c41913;
-        background: #ce305e;
-        background:red;
-        */
     }
     .langs a,
     h1 a,
@@ -112,11 +93,6 @@
     }
     .lead {
         font-family:"EB Garamond", serif;
-        /*
-        color: #ff2a00;
-        font-family:"Roboto Mono", sans-serif;
-        font-style:italic;
-        */
         font-size:1.625rem;
         margin-top:.5rem;
     }
@@ -140,11 +116,6 @@
     .work-title {
         margin:.25rem 0 .125rem;
         font-size:1.25rem;
-        /*
-        font-family:"Roboto Mono", monospace;
-        font-style:italic;
-        font-size:1.75rem;
-        */
     }
     .work-role {
         font-size:1.125rem;
@@ -156,11 +127,6 @@
         font-size:2.5rem;
         margin:2rem 0;
     }
-    /*
-    .year span {
-        border-bottom:2px black solid;
-    }
-    */
     img {
         max-width:100%;
     }
@@ -208,7 +174,6 @@
     }
     @media(min-width:48rem) {
         .langs a {
-            margin-left:.5rem;
         }
         h1 {
             line-height:1;
@@ -226,14 +191,9 @@
         .work-role,
         .exp-role {
             font-size:1.25rem;
-            /*
-            */
         }
         .experiences {
             overflow-x:auto;
-            /*
-            margin-left:24rem;
-            */
         }
         main {
             max-width:74rem;
@@ -299,15 +259,6 @@
 
 <h1><a href="{{.Home}}">{{.Info.Title}}</a></h1>
 <div class="lead">{{.Info.Job}}</div>
-<!--
--->
-<!--
-{{range .Sections}}
-<a href="{{.Href}}">{{.Title}}</a>
-{{end}}
-<h2><span>{{.Sections.Title "work"}}</span></h2>
--->
-
 
 
 <section id="work">
@@ -324,19 +275,15 @@
     {{end}}
 </section>
 
-<h2><span>{{.Sections.Title "about"}}</span></h2>
+<h2>{{.Sections.Title "about"}}</h2>
 
 <div class="about">
     {{.About}}
 </div>
 
-<!--
-<h2><span>{{.Sections.Title "experience"}}</span></h2>
--->
-
 <div>
     {{range .Experience}}
-    <h3 class="year"><span>{{.Year}}</span></h3>
+    <h3 class="year">{{.Year}}</h3>
         <ul class="experiences">
         {{range .Entries}}
             <li class="entry">
@@ -348,6 +295,8 @@
         </ul>
     {{end}}
 </div>
+<br>
+Website by <a href="https://stefbarsch.com">Stef Barsch</a>. Hosted on rg-s.
 <br>
 <br>
 </main>

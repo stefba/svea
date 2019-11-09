@@ -36,6 +36,7 @@ func main() {
 	http.HandleFunc("/de/", renderDe)
 	http.HandleFunc("/rl/", reload)
 	http.HandleFunc("/static/", serveStatic)
+	http.HandleFunc("/robots.txt", serveRobots)
 	http.HandleFunc("/googledbd0f1dfe416dbee.html", serveGoogle)
 
 	http.ListenAndServe(":8444", nil)
@@ -89,6 +90,10 @@ func renderDe(w http.ResponseWriter, r *http.Request) {
 
 func serveGoogle(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, root+"/static/googledbd0f1dfe416dbee.html")
+}
+
+func serveRobots(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, root+"/static/robots.txt")
 }
 
 func serveStatic(w http.ResponseWriter, r *http.Request) {
