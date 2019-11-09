@@ -4,6 +4,24 @@ import (
 	"text/template"
 )
 
+type site struct {
+	Home       string
+	Langs      []*link
+	Info       *info
+	Experience []*year
+	Work       []*work
+	About      string
+	Sections   sections
+	//Contact
+}
+
+func (s *site) Lang() string {
+	if s.Home == "/de/" {
+		return "de"
+	}
+	return "en"
+}
+
 func load() error {
 	err := loadData()
 	if err != nil {
