@@ -82,9 +82,6 @@
         font-weight:normal;
     }
     h1 {
-        /*
-        font-weight:500;
-        */
         text-align:center;
         font-style:italic;
         font-size:6.75rem;
@@ -99,7 +96,7 @@
     h2 {
         line-height:1;
         margin:4.5rem 0 2rem;
-        font-size:3.5rem;
+        font-size:3.25rem;
         font-style:italic;
         font-weight:400;
     }
@@ -122,10 +119,10 @@
         font-style:italic;
     }
     .year {
-        font-style:italic;
-        font-weight:400;
+        font-style:normal;
+        font-weight:600;
         font-size:2.5rem;
-        margin:2rem 0;
+        margin:2.5rem 0 1rem;
     }
     img {
         max-width:100%;
@@ -172,13 +169,24 @@
     .entry {
         margin:0 0 1rem;
     }
+    .credits {
+        font-size:1.5rem;
+    }
+    .credits a {
+        padding-left:.125rem;
+        font-size:1.375rem;
+        font-family:"Public Sans";
+        font-weight:600;
+    }
     @media(min-width:48rem) {
         .langs a {
         }
         h1 {
             line-height:1;
             font-size:8.5rem;
-            text-align:center;
+        }
+        .lead {
+            margin-top:.375rem;
         }
         .work-title,
         .exp-title {
@@ -200,7 +208,7 @@
             margin:0 auto;
         }
         #work {
-            margin:4.75rem 0 4.5rem;
+            margin:4.75rem 0 0rem;
             display:flex;
             justify-content:space-between;
         }
@@ -214,14 +222,16 @@
         }
         .year,
         h2 {
-            margin:4rem 0 0;
-            font-size:2.5rem;
-            font-size:4rem;
+            margin:.5rem 0 2.75rem;
+            font-size:3.5rem;
         }
         .year {
-            font-size:2.875rem;
-            margin-top:2rem;
-            margin-bottom:2rem;
+            font-size:2.1875rem;
+            margin-top:4rem;
+            margin-bottom:1.5rem;
+        }
+        .entry {
+            margin-bottom:1.25rem;
         }
         .work-title {
             margin:.5rem 0 .125rem;
@@ -229,22 +239,25 @@
     }
     @media(min-width:68rem) {
         h1 {
-            font-size:12.5rem;
+            font-size:11.5rem;
         }
     }
     @media(min-width:90rem) {
+        h1 {
+            font-size:12.5rem;
+        }
         .work {
             max-width:40%;
         }
         #work {
             margin:7.75rem 0 4.5rem;
         }
-        /*
-        main {
-            max-width:104rem;
-            margin:0 auto;
+        .year,
+        h2 {
+            margin:4rem 0 0;
+            font-size:2.5rem;
+            font-size:4rem;
         }
-        */
     }
 </style>
 <title>{{.Info.Title}} - {{.Info.Job}}</title>
@@ -296,7 +309,10 @@
     {{end}}
 </div>
 <br>
-Website by <a href="https://stefbarsch.com">Stef Barsch</a>. Hosted on rg-s.
+<div class="credits">
+Website by <a href="https://stefbarsch.com">Stef Barsch</a>.
+Hosted on <a href="https://rg-s.com">rg-s</a>.
+</div>
 <br>
 <br>
 </main>
