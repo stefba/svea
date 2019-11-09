@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width">
+<meta name="description" content="{{.Info.Desc}}">
 <link rel="icon" type="image/png" href="/static/icon.png" sizes="192x192">
 <style>
     @font-face {
@@ -133,7 +134,7 @@
         margin:.25rem 0 .75rem;
     }
     .work-title {
-        margin:0 0 .125rem;
+        margin:.25rem 0 .125rem;
         font-size:1.25rem;
         /*
         font-family:"Roboto Mono", monospace;
@@ -204,7 +205,7 @@
     @media(min-width:48rem) {
         h1 {
             line-height:1;
-            font-size:12.5rem;
+            font-size:8.5rem;
             text-align:center;
         }
         .work-title,
@@ -232,7 +233,7 @@
             margin:0 auto;
         }
         #work {
-        margin:4.75rem 0 4.5rem;
+            margin:4.75rem 0 4.5rem;
             display:flex;
             justify-content:space-between;
         }
@@ -259,9 +260,17 @@
             margin:.5rem 0 .125rem;
         }
     }
+    @media(min-width:68rem) {
+        h1 {
+            font-size:12.5rem;
+        }
+    }
     @media(min-width:90rem) {
         .work {
             max-width:40%;
+        }
+        #work {
+            margin:7.75rem 0 4.5rem;
         }
         /*
         main {
@@ -297,7 +306,7 @@
 <section id="work">
     {{range .Work}}
     <article class="work">
-        <a target="_blank" href="{{.Link}}"><img src="{{.Thumb}}"></a>
+        <a target="_blank" href="{{.Link}}"><img alt="{{.Title}}" src="{{.Thumb}}"></a>
         <div class="work-info">
             <h3 class="work-title"><a target="_blank" href="{{.Link}}">{{.Title}}</a></h3>
             <div class="work-role">
