@@ -105,7 +105,7 @@
         margin:4.5rem 0 2rem;
     }
     .work {
-        margin-bottom:4rem;
+        margin-bottom:3.5rem;
     }
     .work-info {
         margin:.25rem 0 .75rem;
@@ -133,7 +133,7 @@
     .about {
         font-family:"EB Garamond", serif;
         font-size:1.625rem;
-        line-height:1.35;
+        line-height:1.325;
         margin:0 auto 5rem;
     }
 
@@ -205,15 +205,31 @@
         }
         main {
             max-width:74rem;
+            max-width:72rem;
             margin:0 auto;
         }
         #work {
-            margin:4.75rem 0 0rem;
+            margin:6.75rem 0 0rem;
+            /*
             display:flex;
             justify-content:space-between;
+            */
         }
         .work {
+            /*
             max-width:42.5%;
+            */
+        }
+        .work-thumb {
+            text-align:center;
+        }
+        /*
+        .work-thumb img {
+            max-height:440px;
+        }
+        */
+        .work {
+            margin-bottom:6rem;
         }
         .about {
             line-height:1.4;
@@ -222,7 +238,7 @@
         }
         .year,
         h2 {
-            margin:.5rem 0 2.75rem;
+            margin:.5rem 0 2.5rem;
             font-size:3.5rem;
         }
         .year {
@@ -277,7 +293,9 @@
 <section id="work">
     {{range .Work}}
     <article class="work">
-        <a target="_blank" href="{{.Link}}"><img alt="{{.Title}}" src="{{.Thumb}}"></a>
+        <div class="work-thumb">
+            <a target="_blank" href="{{.Link}}"><img alt="{{.Title}}" src="{{.Thumb}}"></a>
+        </div>
         <div class="work-info">
             <h3 class="work-title"><a target="_blank" href="{{.Link}}">{{.Title}}</a></h3>
             <div class="work-role">
