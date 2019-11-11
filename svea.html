@@ -43,14 +43,6 @@
         padding:.125rem .125rem .0625rem;
     }
     h1 a {
-        /*
-    .year,
-    h2,
-        */
-        color:red;
-        color:black;
-        color: #ffc70e;
-        color: #ffcf00;
         color: #ffc400;
     }
     .langs a,
@@ -61,6 +53,18 @@
     a {
         color:orange;
         color:black;
+    }
+    .experiences a {
+        /*
+        background:#fff9d4;
+        text-decoration: underline;
+        text-decoration-color: red;
+        */
+        text-decoration:none;
+        border-bottom:2px #ffc400 solid;
+    }
+    .experiences a:hover {
+        border-color:red;
     }
     body {
         font-family:"EB Garamond", serif;
@@ -158,7 +162,8 @@
         font-family:"EB Garamond", serif;
         margin-left:.5rem;
         font-size:1.25rem;
-        display:inline-block;
+        display:inline;
+        line-height:1;
     }
     .exp-role {
         font-style:italic;
@@ -319,7 +324,7 @@
 <div class="about">
     {{.About}}
 </div>
-    <a id="mail" href="#mail"><img src="/static/mail.svg"><a>
+    <a id="mail" href="#mail"><img src="/static/mail.svg"></a>
 
 <div>
     {{range .Experience}}
