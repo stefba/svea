@@ -45,6 +45,9 @@
     h1 a {
         color: #ffc400;
     }
+    h1 a:hover {
+        color:#ffb800;
+    }
     .langs a,
     h1 a,
     .work-title a {
@@ -54,6 +57,7 @@
         color:orange;
         color:black;
     }
+    .credits a,
     .about a,
     .experiences a {
         /*
@@ -177,17 +181,22 @@
         margin:0 0 1rem;
     }
     .credits {
-        font-size:1.5rem;
+        font-size:1.375rem;
     }
     .credits a {
-        padding-left:.125rem;
-        font-size:1.375rem;
+        margin-left:.25rem;
+        font-size:1.4375rem;
         font-family:"Public Sans";
         font-weight:600;
     }
     #mail {
         display:inline-block;
         margin:0 0 1rem;
+    }
+    .rg-s img {
+        vertical-align:middle;
+        height:1rem;
+        margin-top:.25rem;
     }
     @media(min-width:48rem) {
         #mail > img {
@@ -343,11 +352,12 @@
     {{end}}
 </div>
 <br>
-<div class="credits">
-Website by <a href="https://stefbarsch.com">Stef Barsch</a>.
-Hosted on <a href="https://rg-s.com">rg-s</a>.
-</div>
 <br>
+<br>
+<br>
+<div class="credits">
+Website by <a href="https://stefbarsch.com">Stef Barsch</a>.&ensp;Hosted on <a class="rg-s" href="https://rg-s.com"><img src="/static/rg-s.svg"></a>.
+</div>
 <br>
 </main>
 <script>
