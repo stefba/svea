@@ -18,27 +18,64 @@ type work struct {
 }
 
 func readWorks(path string) (map[string][]*work, error) {
-	l, err := ioutil.ReadDir(path)
-	if err != nil {
-		return nil, err
-	}
-
 	works := map[string][]*work{
 		"en": []*work{},
 		"de": []*work{},
 	}
 
-	for _, file := range l {
+	dirs, err := getWorks(path)
+	if err != nil {
+		return nil, err
+	}
+
+	for _, d := range dirs {
+		m, err := readWork(path + "/" + d)
+		if err != nil {
+			return nil, err
+		}
+		works["en"] = append(works["en"], m["en"])
+		works["de"] = append(works["de"], m["de"])
+	}
+
+	return works, nil
+}
+
+func getWorks(path string) ([]string, error) {
+	dirs := []string{}
+	dirList, err := ioutil.ReadDir(path)
+	if err != nil {
+		return nil, err
+	}
+
+	sortfile, err := ioutil.ReadFile(path + "/sort")
+	if err != nil {
+		return nil, err
+	}
+
+	sort := splitToLines(string(sortfile))
+
+	for _, file := range dirList {
+		if len(file.Name()) > 0 && file.Name()[0] == '_' {
+			continue
+		}
 		if file.IsDir() {
-			m, err := readWork(path + "/" + file.Name())
-			if err != nil {
-				return nil, err
-			}
-			works["en"] = append(works["en"], m["en"])
-			works["de"] = append(works["de"], m["de"])
+			dirs = append(dirs, file.Name())
 		}
 	}
-	return works, nil
+
+	return applySort(dirs, sort), nil
+}
+
+func applySort(dirs, sort []string) []string {
+	for _, sortElement := range invert(sort) {
+		for i, d := range dirs {
+			if d == sortElement {
+				cut := dirs[i]
+				dirs = append([]string{cut}, append(dirs[:i], dirs[i+1:]...)...)
+			}
+		}
+	}
+	return dirs
 }
 
 func readWork(path string) (map[string]*work, error) {
@@ -113,3 +150,17 @@ func splitText(b []byte) (map[string][]byte, error) {
 		"de": texts[1],
 	}, nil
 }
+
+func splitToLines(file string) []string {
+	return strings.Split(strings.TrimSpace(file), "\n")
+}
+
+func invert(ss []string) []string {
+	ns := []string{}
+	for i := len(ss) - 1; i >= 0; i-- {
+		ns = append(ns, ss[i])
+	}
+	return ns
+}
+
+

@@ -43,6 +43,10 @@ func readExperiences(path string) (map[string][]*year, error) {
 			return nil, fmt.Errorf("Filename too short: %v", p)
 		}
 
+		if file.Name()[0] == '.' || file.Name()[0] == '_' {
+			continue
+		}
+
 		exps, err := readExperienceFile(p)
 		if err != nil {
 			return nil, err
