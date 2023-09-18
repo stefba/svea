@@ -3,7 +3,6 @@ package main
 import (
 	"github.com/russross/blackfriday"
 	"gopkg.in/yaml.v3"
-	"svea/hyph"
 )
 
 type info struct {
@@ -15,15 +14,15 @@ type info struct {
 
 type link struct {
 	Name, Href string
-	IsActive bool
+	IsActive   bool
 }
 
 func langNav(lang string) []*link {
 	if lang == "de" {
-		return []*link {
+		return []*link{
 			&link{
-				Name: "Deutsch",
-				Href: "/de/",
+				Name:     "Deutsch",
+				Href:     "/de/",
 				IsActive: true,
 			},
 			&link{
@@ -32,14 +31,14 @@ func langNav(lang string) []*link {
 			},
 		}
 	}
-	return []*link {
+	return []*link{
 		&link{
 			Name: "Deutsch",
 			Href: "/de/",
 		},
 		&link{
-			Name: "English",
-			Href: "/",
+			Name:     "English",
+			Href:     "/",
 			IsActive: true,
 		},
 	}
@@ -75,15 +74,8 @@ func readAbout(path string) (map[string]string, error) {
 		return nil, err
 	}
 
-	en, err := hyph.HyphenateText(string(blackfriday.MarkdownCommon(texts["en"])), "en")
-	if err != nil {
-		return nil, err
-	}
-
-	de, err := hyph.HyphenateText(string(blackfriday.MarkdownCommon(texts["de"])), "de")
-	if err != nil {
-		return nil, err
-	}
+	en := string(blackfriday.MarkdownCommon(texts["en"]))
+	de := string(blackfriday.MarkdownCommon(texts["de"]))
 
 	return map[string]string{
 		"de": de,

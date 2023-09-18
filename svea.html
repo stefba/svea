@@ -2,9 +2,6 @@
 <html lang="{{.Lang}}">
 <meta name="viewport" content="width=device-width">
 <meta name="description" content="{{.Info.Desc}}">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Oi&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="/static/icon.png" sizes="192x192">
 <link rel="alternate" hreflang="de" href="https://sveaimmel.com/de/">
 <link rel="alternate" hreflang="en" href="https://sveaimmel.com">
@@ -38,7 +35,6 @@
         border-bottom:2px #000 solid;
     }
     .langs {
-        font-style:italic;
         text-align:right;
     }
     .langs a {
@@ -46,10 +42,10 @@
         padding:.125rem .125rem .0625rem;
     }
     h1 a {
-        color: #ffc400;
+        //color: #ffc400;
     }
     h1 a:hover {
-        color:#ffb800;
+        //color:#ffb800;
     }
     .langs a,
     h1 a,
@@ -74,9 +70,12 @@
         font-family:"EB Garamond", serif;
         line-height:1.4;
     }
+    h1, h2, h3,
+    .langs {
+        font-family:"Public Sans", sans-serif;
+    }
     .lead,
     #about a,
-    .langs,
     h1,
     h2, .year,
     .exp-role, .work-role {
@@ -99,9 +98,8 @@
       font-weight:500;
     }
     h1 {
-        text-align:center;
-        font-style:italic;
-        font-size:6.75rem;
+        font-style:normal;
+        font-size:7rem;
         margin:1.5rem 0 0rem;
         line-height:.9;
     }
@@ -146,6 +144,7 @@
     img:hover {
         opacity:.9;
     }
+    #services,
     #about {
         font-family:"EB Garamond", serif;
         font-size:1.625rem;
@@ -163,8 +162,6 @@
     }
     .exp-title,
     .work-title {
-        font-weight:500;
-        font-family:"Roboto Mono", monospace;
         font-weight:600;
         font-family:"Public Sans", monospace;
         font-size:1.375rem;
@@ -313,12 +310,12 @@
     }
     @media(min-width:68rem) {
         h1 {
-            font-size:9.5rem;
+            font-size:7rem;
         }
     }
     @media(min-width:90rem) {
         h1 {
-            font-size:10.5rem;
+            font-size:9rem;
         }
         /*
         .work {
@@ -334,6 +331,18 @@
             font-size:4rem;
         }
     }
+    #services h3 {
+        font-family:"Public Sans", sans-serif;
+        font-weight:bold;
+        margin:2rem 0 1rem;;
+        font-size:2rem;
+    }
+    #services {
+    }
+    #services ul {
+        margin:0;
+        line-height:1.5;
+    }
 </style>
 <title>{{.Info.Title}} - {{.Info.Job}}</title>
 
@@ -348,6 +357,38 @@
 <h1><a href="{{.Home}}">{{.Info.Title}}</a></h1>
 <div class="lead">{{.Info.Job}}</div>
 
+<section id="services">
+<h3>Performance-Dokumentation</h3>
+<ul>
+<li>Trailer & Full-length documentation</li>
+<li>Tonaufnahme und Fotodokumentation</li>
+<li>Schnitt und Farbkorrektur</li>
+</ul>
+
+<h3>Interviews, Dokumentarfilm</h3>
+<ul>
+<li>Beleuchtung und Tonaufnahme</li>
+<li>Schnitt und Farbkorrektur</li>
+<li>Dreh- und Technikkoordination</li>
+</ul>
+
+<h3> Director of Photography </h3>
+<ul>
+<li>Kurzfilme, Musikvideos</li>
+<li>Dokumentarfilme (short & long)</li>
+<li>Bildgestaltung, Lichtkonzept</li>
+<li>Dreh- und Technikkoordination</li>
+</ul>
+</section>
+
+<a id="mail" href="#mail"><img src="/static/mail.svg"></a>
+
+
+<h2>{{.Sections.Title "about"}}</h2>
+
+<div id="about"><a href="/about/svea.jpg" class="img-link" target="_blank"><img alt="Svea Immel" src="/about/svea.jpg"></a>
+  {{.About}}
+</div>
 
 <section id="work">
     {{range .Work}}
@@ -364,14 +405,6 @@
     </article>
     {{end}}
 </section>
-
-<h2>{{.Sections.Title "about"}}</h2>
-
-<div id="about"><a href="/about/svea.jpg" class="img-link" target="_blank"><img alt="Svea Immel" src="/about/svea.jpg"></a>
-  {{.About}}
-</div>
-
-    <a id="mail" href="#mail"><img src="/static/mail.svg"></a>
 
 
 
@@ -395,10 +428,12 @@
 <br>
 <br>
 <br>
+<!--
 <div class="credits">
 Website by <a href="https://stefba.com">Stef Barsch</a>.
 </div>
 <br>
+-->
 </main>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
