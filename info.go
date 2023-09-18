@@ -20,23 +20,23 @@ type link struct {
 func langNav(lang string) []*link {
 	if lang == "de" {
 		return []*link{
-			&link{
+			{
 				Name:     "Deutsch",
 				Href:     "/de/",
 				IsActive: true,
 			},
-			&link{
+			{
 				Name: "English",
 				Href: "/",
 			},
 		}
 	}
 	return []*link{
-		&link{
+		{
 			Name: "Deutsch",
 			Href: "/de/",
 		},
-		&link{
+		{
 			Name:     "English",
 			Href:     "/",
 			IsActive: true,
@@ -51,8 +51,8 @@ func readInfo(path string) (map[string]*info, error) {
 	}
 
 	m := map[string]*info{
-		"en": &info{},
-		"de": &info{},
+		"en": {},
+		"de": {},
 	}
 
 	err = yaml.Unmarshal(split["en"], m["en"])

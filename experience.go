@@ -4,9 +4,10 @@ import (
 	"bufio"
 	"bytes"
 	"fmt"
-	"gopkg.in/yaml.v3"
 	"io/ioutil"
 	"sort"
+
+	"gopkg.in/yaml.v3"
 )
 
 type year struct {
@@ -28,8 +29,8 @@ func readExperiences(path string) (map[string][]*year, error) {
 	}
 
 	langs := map[string][]*year{
-		"en": []*year{},
-		"de": []*year{},
+		"en": {},
+		"de": {},
 	}
 
 	for _, file := range l {
@@ -114,8 +115,8 @@ func readExperienceFile(path string) ([]map[string]*experience, error) {
 		}
 
 		exp := map[string]*experience{
-			"en": &experience{},
-			"de": &experience{},
+			"en": {},
+			"de": {},
 		}
 
 		for _, lang := range []string{"en", "de"} {

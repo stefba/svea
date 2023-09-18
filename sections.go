@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/kennygrant/sanitize"
 	"strings"
+
+	"github.com/kennygrant/sanitize"
 )
 
 type sections []*section
@@ -28,37 +29,37 @@ func (s *section) Href() string {
 
 var sectionsLangs = map[string]sections{
 	"en": []*section{
-		&section{
+		{
 			Key:   "work",
 			Title: "Works",
 		},
-		&section{
+		{
 			Key:   "about",
 			Title: "About me",
 		},
-		&section{
+		{
 			Key:   "contact",
 			Title: "Contact",
 		},
-		&section{
+		{
 			Key:   "experience",
 			Title: "Experience",
 		},
 	},
 	"de": []*section{
-		&section{
+		{
 			Key:   "work",
 			Title: "Arbeit",
 		},
-		&section{
+		{
 			Key:   "about",
 			Title: "Über mich",
 		},
-		&section{
+		{
 			Key:   "contact",
 			Title: "Kontakt",
 		},
-		&section{
+		{
 			Key:   "experience",
 			Title: "Erfahrung",
 		},

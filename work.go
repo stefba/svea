@@ -3,10 +3,11 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"gopkg.in/yaml.v3"
 	"io/ioutil"
 	"path/filepath"
 	"strings"
+
+	"gopkg.in/yaml.v3"
 )
 
 type work struct {
@@ -19,8 +20,8 @@ type work struct {
 
 func readWorks(path string) (map[string][]*work, error) {
 	works := map[string][]*work{
-		"en": []*work{},
-		"de": []*work{},
+		"en": {},
+		"de": {},
 	}
 
 	dirs, err := getWorks(path)
@@ -114,8 +115,8 @@ func readWorkInfo(path string) (map[string]*work, error) {
 	}
 
 	m := map[string]*work{
-		"en": &work{},
-		"de": &work{},
+		"en": {},
+		"de": {},
 	}
 
 	err = yaml.Unmarshal(split["en"], m["en"])
@@ -162,5 +163,3 @@ func invert(ss []string) []string {
 	}
 	return ns
 }
-
-

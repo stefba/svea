@@ -11,6 +11,7 @@ type site struct {
 	Experience []*year
 	Work       []*work
 	About      string
+	Services   string
 	Sections   sections
 	//Contact
 }
@@ -31,51 +32,58 @@ func load() error {
 }
 
 func loadData() error {
-	info, err := readInfo(root+"/data/info.yaml")
+	info, err := readInfo(root + "/data/info.yaml")
 	if err != nil {
 		return err
 	}
 
-	works, err := readWorks(root+"/data/work")
+	works, err := readWorks(root + "/data/work")
 	if err != nil {
 		return err
 	}
 
-	exp, err := readExperiences(root+"/data/experience")
+	exp, err := readExperiences(root + "/data/experience")
 	if err != nil {
 		return err
 	}
 
-	about, err := readAbout(root+"/data/about/about.md")
+	about, err := readAbout(root + "/data/about/about.md")
+	if err != nil {
+		return err
+	}
+
+	services, err := readAbout(root + "/data/services/services.md")
 	if err != nil {
 		return err
 	}
 
 	siteDe = &site{
 		Home:       "/de/",
-		Langs:		langNav("de"),
+		Langs:      langNav("de"),
 		Sections:   sectionsLangs["de"],
 		Info:       info["de"],
 		Work:       works["de"],
 		Experience: exp["de"],
 		About:      about["de"],
+		Services:   services["de"],
 	}
 
 	siteEn = &site{
 		Home:       "/",
-		Langs:		langNav("en"),
+		Langs:      langNav("en"),
 		Sections:   sectionsLangs["en"],
 		Info:       info["en"],
 		Work:       works["en"],
 		Experience: exp["en"],
 		About:      about["en"],
+		Services:   services["en"],
 	}
 
 	return nil
 }
 
 func loadTemplate() error {
-	t, err := template.ParseFiles(root+"/svea.html")
+	t, err := template.ParseFiles(root + "/svea.html")
 	if err != nil {
 		return err
 	}
