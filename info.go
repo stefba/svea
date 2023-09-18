@@ -68,7 +68,7 @@ func readInfo(path string) (map[string]*info, error) {
 	return m, nil
 }
 
-func readAbout(path string) (map[string]string, error) {
+func readMarkdownSplit(path string) (map[string]string, error) {
 	texts, err := splitFile(path)
 	if err != nil {
 		return nil, err

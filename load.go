@@ -47,12 +47,12 @@ func loadData() error {
 		return err
 	}
 
-	about, err := readAbout(root + "/data/about/about.md")
+	about, err := readMarkdownSplit(root + "/data/about/about.md")
 	if err != nil {
 		return err
 	}
 
-	services, err := readAbout(root + "/data/services/services.md")
+	services, err := readMarkdownSplit(root + "/data/services/services.md")
 	if err != nil {
 		return err
 	}
