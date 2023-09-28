@@ -6,28 +6,43 @@
 <link rel="alternate" hreflang="de" href="https://sveaimmel.com/de/">
 <link rel="alternate" hreflang="en" href="https://sveaimmel.com">
 <link rel="alternate" hreflang="x-default" href="https://sveaimmel.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=Lora&family=PT+Serif:ital@0;1&display=swap" rel="stylesheet">
 
 
 <style>
+    @font-face {
+        font-family: "IBM Plex Serif";
+        font-style: normal;
+        font-weight: 400;
+        font-display:fallback;
+        src: url("/static/fonts/IBMPlexSerif.woff2?v=b") format("woff2");
+    }
+    @font-face {
+        font-family: "Public Sans";
+        font-style: normal;
+        font-weight: 400;
+        font-display:fallback;
+        src: url("/static/fonts/PublicSans-Regular.woff2?v=b") format("woff2");
+    }
+    @font-face {
+        font-family: "Public Sans";
+        font-style: normal;
+        font-weight: 500;
+        font-display:fallback;
+        src: url("/static/fonts/PublicSans-Medium.woff2?v=b") format("woff2");
+    }
     @font-face {
         font-family: "Public Sans";
         font-style: normal;
         font-weight: 600;
         font-display:fallback;
-        src: url("/static/fonts/PublicSans-SemiBold.woff2?v=b") format("woff2"),
-             url("/static/fonts/PublicSans-SemiBold.woff?v=b") format("woff");
+        src: url("/static/fonts/PublicSans-SemiBold.woff2?v=b") format("woff2");
     }
     @font-face {
         font-family: "Public Sans";
         font-style: italic;
         font-weight: normal;
         font-display:fallback;
-        src: url("/static/fonts/PublicSans-Italic.woff2?v=b") format("woff2"),
-             url("/static/fonts/PublicSans-Italic.woff?v=b") format("woff");
+        src: url("/static/fonts/PublicSans-Italic.woff2?v=b") format("woff2");
     }
     .logo {
         max-width:8rem;
@@ -231,10 +246,9 @@
             font-size:1.25rem;
         }
         #experience {
-          display:flex;
-          flex-wrap: wrap;
+          display:grid;
+          grid-template-columns: 1fr 1fr;
           margin-top:6rem;       
-          justify-content: space-around;
         }
         .experiences {
             overflow-x:auto;
@@ -245,6 +259,8 @@
         }
         #work {
             margin:6.75rem 0 0rem;
+        }
+        .work-grid {
             display:grid;
             grid-template-columns:1fr 1fr;
             column-gap:2.5rem;
@@ -370,8 +386,11 @@
   {{.About}}
 </div>
 
-<h2>Director of Photography</h2>
 <section id="work">
+    <!--
+    <h2>Director of Photography</h2>
+    -->
+    <div class="work-grid">
     {{range .Work}}
     <article class="work">
         <div class="work-thumb">
@@ -385,6 +404,7 @@
         </div>
     </article>
     {{end}}
+    </div>
 </section>
 
 
