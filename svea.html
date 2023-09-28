@@ -60,7 +60,10 @@
     }
     #about a,
     .experiences a {
-        border-bottom:2px #ffc400 solid;
+        text-decoration: underline;;
+        text-decoration-color: #ffc400;
+        text-decoration-thickness: 2px;
+        //border-bottom:2px #ffc400 solid;
     }
     .credits a:hover,
     #about a:hover,
@@ -78,15 +81,15 @@
         font-family:"Public Sans", sans-serif;
     }
     .lead,
-    #about a,
     h1,
-    .exp-role, .work-role {
+    .work-role {
         font-family:"Public Sans", sans-serif;
         font-style:italic;
     }
     #about a {
+        color:blue;
         padding:0 .125rem;
-        text-decoration:none;
+        text-decoration:underline;
     }
     h1, h3 {
         font-weight:normal;
@@ -133,8 +136,8 @@
         font-style:italic;
     }
     .year {
+        font-family: "IBM Plex Serif", serif;
         font-style:normal;
-        font-weight:600;
         font-size:2.5rem;
         margin:2.5rem 0 1rem;
     }
@@ -158,25 +161,21 @@
         list-style:none;
         padding:0;
         font-size:1.125rem;
+        font-family:"Public Sans", monospace;
     }
     .exp-title,
     .work-title {
         font-weight:600;
-        font-family:"Public Sans", monospace;
-        font-size:1.375rem;
     }
 
     .exp-extra {
-        font-family:"EB Garamond", serif;
-        font-size:1.25rem;
+        font-family: "IBM Plex Serif", serif;
         display:block;
-        line-height:1;
     }
-    .exp-role {
-        font-style:italic;
+    .exp-role, .exp-type {
         margin-top:.125rem;
         font-size:1.125rem;
-        display:inline-block;
+        display:block;
     }
     .entry {
         margin:0 0 1rem;
@@ -227,9 +226,6 @@
         .exp-title {
             font-size:1.4375rem;
         }
-        .exp-extra {
-            font-size:1.3125rem;
-        }
         .work-role,
         .exp-role {
             font-size:1.25rem;
@@ -237,7 +233,8 @@
         #experience {
           display:flex;
           flex-wrap: wrap;
-          margin-top:6rem;
+          margin-top:6rem;       
+          justify-content: space-around;
         }
         .experiences {
             overflow-x:auto;
@@ -305,13 +302,12 @@
         margin:0 0 2rem;
         margin-left:0rem;
         padding-left:2.5rem;
-        //list-style-type: "–";
     }
     #services ul li {
       padding-left:.375rem;
     }
     #mail {
-        font-size:2.25rem;
+        font-size:2.125rem;
         margin-top:3.5rem;
         text-align:left;
     }
@@ -322,9 +318,9 @@
         margin-right:2.25rem;
     }
     #mail a {
-        //background-color: #ffff81;
-        border: .375rem double;
+        border: .3rem solid;
         padding: 1.25rem 1.75rem;
+        border-color:green;
         color: green;
     }
     #mail a:hover {
@@ -342,7 +338,7 @@
 
 <h1><a href="{{.Home}}">{{.Info.Title}} &nbsp;</a>
 
-<img class="logo" src="/static/icon.png">
+<img class="logo" src="/static/logo.svg">
 </h1>
 <div class="lead">{{.Info.PrintJobs}}</div>
 
@@ -361,7 +357,9 @@
 </section>
 
 <div id="mail">
+    <!--
     <span class="hand">👉</span>
+    -->
     <a href="#mail">sverimmel@gmail.com</a>
     </div>
 
@@ -400,8 +398,9 @@
         {{range .Entries}}
             <li class="entry">
                 <span class="exp-title">{{.Title}}</span>
-                <span class="exp-extra">{{.Extra}}</span><br>
-                <span class="exp-role">{{.Role}},&ensp;{{.Type}}</span>
+                <span class="exp-extra">{{.Extra}}</span>
+                <span class="exp-role">{{.Role}}</span>
+                <span class="exp-type">{{.Type}}</span>
             </li>
         {{end}}
         </ul>
