@@ -7,9 +7,20 @@ import (
 
 type info struct {
 	Title string
-	Job   string
+	Jobs  []string
 	Desc  string
 	Lead  string
+}
+
+func (i *info) PrintJobs() string {
+	str := ""
+	for i, v := range i.Jobs {
+		if i > 0 {
+			str += ", "
+		}
+		str += v
+	}
+	return str
 }
 
 type link struct {

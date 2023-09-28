@@ -6,15 +6,13 @@
 <link rel="alternate" hreflang="de" href="https://sveaimmel.com/de/">
 <link rel="alternate" hreflang="en" href="https://sveaimmel.com">
 <link rel="alternate" hreflang="x-default" href="https://sveaimmel.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=Lora&family=PT+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+
 <style>
-    @font-face {
-        font-family: "EB Garamond";
-        font-style: normal;
-        font-weight: normal;
-        font-display:fallback;
-        src: url("/static/fonts/EBGaramond12-Regular.woff2?v=b") format("woff2"),
-             url("/static/fonts/EBGaramond12-Regular.woff?v=b") format("woff");
-    }
     @font-face {
         font-family: "Public Sans";
         font-style: normal;
@@ -31,21 +29,24 @@
         src: url("/static/fonts/PublicSans-Italic.woff2?v=b") format("woff2"),
              url("/static/fonts/PublicSans-Italic.woff?v=b") format("woff");
     }
+    .logo {
+        max-width:8rem;
+        float:right;
+    }
     .active {
         border-bottom:2px #000 solid;
     }
     .langs {
-        text-align:right;
+        text-align:center;
+        font-weight:normal;
+        font-size:1.15rem;
     }
     .langs a {
         margin-right:.375rem;
         padding:.125rem .125rem .0625rem;
     }
-    h1 a {
-        //color: #ffc400;
-    }
     h1 a:hover {
-        //color:#ffb800;
+        color:gray
     }
     .langs a,
     h1 a,
@@ -68,8 +69,10 @@
     }
     body {
         font-family:"EB Garamond", serif;
+        
         line-height:1.4;
     }
+    #mail,
     h1, h2, h3,
     .langs {
         font-family:"Public Sans", sans-serif;
@@ -77,16 +80,10 @@
     .lead,
     #about a,
     h1,
-    h2, .year,
     .exp-role, .work-role {
         font-family:"Public Sans", sans-serif;
         font-style:italic;
     }
-    /*
-    h1 {
-      font-family:'Oi';
-    }
-    */
     #about a {
         padding:0 .125rem;
         text-decoration:none;
@@ -108,11 +105,14 @@
         margin-top:.625rem;
     }
     h2 {
-        line-height:1;
         margin:4.5rem 0 2rem;
+        /*
         font-size:3.25rem;
-        font-style:italic;
         font-weight:400;
+        line-height:1;
+        font-family:"IBM Plex Serif";
+        font-style:italic;
+        */
     }
 
     #work {
@@ -146,15 +146,14 @@
     }
     #services,
     #about {
-        font-family:"EB Garamond", serif;
+        font-family:"IBM Plex serif", serif;
         font-size:1.625rem;
         line-height:1.325;
         margin:0 auto 2rem;
     }
 
     .experiences {
-        overflow-x:scroll;
-        white-space:nowrap;
+        width:25rem;
         list-style-position:outside;
         list-style:none;
         padding:0;
@@ -192,7 +191,6 @@
         font-weight:600;
     }
     #mail {
-        display:inline-block;
         margin:0 0 1rem;
     }
     .rg-s img {
@@ -203,9 +201,6 @@
     #about .img-link {
       padding:0;
       border:0;
-    }
-    #about img {
-      max-width:70%;
     }
     @media(max-width:26rem) {
       h1 {
@@ -223,7 +218,7 @@
         }
         h1 {
             line-height:1;
-            font-size:8.5rem;
+            font-size:6rem;
         }
         .lead {
             margin-top:.375rem;
@@ -240,112 +235,103 @@
             font-size:1.25rem;
         }
         #experience {
+          display:flex;
+          flex-wrap: wrap;
           margin-top:6rem;
         }
         .experiences {
             overflow-x:auto;
         }
         main {
-            max-width:80rem;
+            max-width:55rem;
             margin:0 auto;
         }
         #work {
             margin:6.75rem 0 0rem;
             display:grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns:1fr 1fr;
             column-gap:2.5rem;
-        }
-        .work {
-            /*
-            max-width:42.5%;
-            */
         }
         .work-thumb {
             text-align:center;
         }
-        /*
-        .work-thumb img {
-            max-height:440px;
-        }
-        */
-        .work {
-            margin-bottom:6rem;
-        }
-        #about {
-            line-height:1.4;
-            font-size:1.9rem;
-            margin-bottom:4rem;
-        }
-        #about p {
-          max-width:52rem;
-        }
-        .year,
-        h2 {
-            margin:.5rem 0 2.5rem;
-            font-size:3.5rem;
-        }
-        .year {
-            font-size:2.1875rem;
-            margin-top:4rem;
-            margin-bottom:1.5rem;
-        }
-        .entry {
-            margin-bottom:1.25rem;
-        }
-        .work-title {
-            margin:.5rem 0 .125rem;
-        }
-        #about img {
-          max-height:24rem;
-          max-width:100%;
-        }
-        #about .img-link {
-          float:right;
-          margin-left:2rem;
-        }
-        .lead {
-            font-size:1.625rem;
-            margin-top:.5rem;
-        }
     }
     @media(min-width:68rem) {
-        h1 {
-            font-size:7rem;
+        main {
+            max-width:68rem;
+            margin:0 auto;
         }
     }
     @media(min-width:90rem) {
-        h1 {
-            font-size:9rem;
-        }
-        /*
-        .work {
-            max-width:40%;
-        }
-        */
-        #work {
-            margin:7.75rem 0 4.5rem;
-        }
-        h2 {
-            margin:4rem 0 0;
-            font-size:2.5rem;
-            font-size:4rem;
-        }
     }
+    h2,
     #services h3 {
         font-family:"Public Sans", sans-serif;
         font-weight:bold;
-        margin:2rem 0 1rem;;
-        font-size:2rem;
+        margin:.5rem 0;
+        font-size:1.9rem;
     }
     #services {
+        margin:4rem 0 0;
+        display:grid;
+        grid-template-columns:60% 40%;
+    }
+    #services img {
+       max-width:80%;
+    }
+    .right-i {
+        text-align:right;
+    }
+    .right-i img {
+        margin:4rem 0 0;
+    }
+    #about {
+        margin-top:5rem;
+    }
+    #services,
+    #about {
+        font-size:1.35rem;
+        line-height:1.6;
+    }
+    #about {
+        font-size:1.5rem;
+        line-height:1.7;
+    }
+    #about strong {
+        font-weight: 600;
     }
     #services ul {
         margin:0;
-        line-height:1.5;
+        margin:0 0 2rem;
+        margin-left:0rem;
+        padding-left:2.5rem;
+        //list-style-type: "–";
+    }
+    #services ul li {
+      padding-left:.375rem;
+    }
+    #mail {
+        font-size:2.25rem;
+        margin-top:3.5rem;
+        text-align:left;
+    }
+    .hand {
+        font-size:3.75rem;
+        line-height:100%;
+        vertical-align: middle;
+        margin-right:2.25rem;
+    }
+    #mail a {
+        //background-color: #ffff81;
+        border: .375rem double;
+        padding: 1.25rem 1.75rem;
+        color: green;
+    }
+    #mail a:hover {
+        color:red;
     }
 </style>
-<title>{{.Info.Title}} - {{.Info.Job}}</title>
-
+<title>{{.Info.Title}} 🎥 - {{.Info.PrintJobs}}</title>
 <main>
 
     <nav class="langs">
@@ -354,22 +340,39 @@
     {{end}}
     </nav>
 
-<h1><a href="{{.Home}}">{{.Info.Title}}</a></h1>
-<div class="lead">{{.Info.Job}}</div>
+<h1><a href="{{.Home}}">{{.Info.Title}} &nbsp;</a>
+
+<img class="logo" src="/static/icon.png">
+</h1>
+<div class="lead">{{.Info.PrintJobs}}</div>
+
 
 <section id="services">
+    <div class="col">
     {{.Services}}
+    </div>
+    <div class="right-i">
+        <!--
+    <a href="/about/svea.jpg" class="img-link" target="_blank">
+👉 
+        -->
+        <img alt="Svea Immel" src="/about/svea.jpg">
+    </div>
 </section>
 
-<a id="mail" href="#mail"><img src="/static/mail.svg"></a>
+<div id="mail">
+    <span class="hand">👉</span>
+    <a href="#mail">sverimmel@gmail.com</a>
+    </div>
 
 
+
+<div id="about">
 <h2>{{.Sections.Title "about"}}</h2>
-
-<div id="about"><a href="/about/svea.jpg" class="img-link" target="_blank"><img alt="Svea Immel" src="/about/svea.jpg"></a>
   {{.About}}
 </div>
 
+<h2>Director of Photography</h2>
 <section id="work">
     {{range .Work}}
     <article class="work">
@@ -388,6 +391,7 @@
 
 
 
+<h2>Projects</h2>
 <div id="experience">
     {{range .Experience}}
     <div class="experience">
