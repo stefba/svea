@@ -1,16 +1,21 @@
 
+h2,
+#services h3 {
+    font-size: 1.4rem;
+    line-height: 1.1;
+    font-family:"Public Sans", sans-serif;
+    font-weight:600;
+    margin:.5rem 0;
+}
 #services,
 #about {
     font-family:"IBM Plex serif", serif;
     margin:0 auto 2rem;
 }
-
-h2,
-#services h3 {
-    font-size: 1.9rem;
-    font-family:"Public Sans", sans-serif;
-    font-weight:bold;
-    margin:.5rem 0;
+#services,
+#about {
+    font-size:1.1rem;
+    line-height:1.6;
 }
 #services {
     margin:4rem 0 0;
@@ -27,15 +32,12 @@ h2,
 #about {
     margin-top:5rem;
 }
-#services,
-#about {
-    font-size:1.15rem;
-    line-height:1.6;
-}
+/*
 #about {
     font-size:1.5rem;
     line-height:1.7;
 }
+*/
 #about strong {
     font-weight: 600;
 }
@@ -52,6 +54,7 @@ h2,
     font-size:2.125rem;
     margin:3.5rem 0 1rem;
     text-align:left;
+    display: none;
 }
 .hand {
     font-size:3.75rem;
@@ -86,6 +89,10 @@ h2,
     }
   }
   @media(min-width:55rem) {
+    h2,
+    #services h3 {
+        font-size: 1.9rem;
+    }
     #services,
     #about {
         font-size:1.35rem;

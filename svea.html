@@ -7,7 +7,7 @@
 <link rel="alternate" hreflang="en" href="https://sveaimmel.com">
 <link rel="alternate" hreflang="x-default" href="https://sveaimmel.com">
 <link rel="stylesheet" href="/static/main.css">
-<title>{{.Info.Title}} 🎥 - {{.Info.PrintJobs}}</title>
+<title>{{.Info.Title}} 🎥 – {{.Info.PrintJobs}}</title>
 <main>
 
     <nav class="langs">
@@ -17,8 +17,7 @@
     </nav>
 
 <h1><a href="{{.Home}}">{{.Info.Title}}</a>
-
-<img class="logo" src="/static/logo.svg">
+<a href="{{.Home}}"><img alt="" class="logo" src="/static/logo.svg"></a>
 </h1>
 <div class="lead">
     {{range $i, $x := .Info.Jobs}}

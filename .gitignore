@@ -3,3 +3,5 @@ data
 svea
 sver
 .DS_Store
+css/dist/main.css.map
+css/dist/main.css
