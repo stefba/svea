@@ -44,9 +44,14 @@
         font-display:fallback;
         src: url("/static/fonts/PublicSans-Italic.woff2?v=b") format("woff2");
     }
+    body {
+        hyphens:auto;
+        -webkit-hyphens: auto;
+    }
     .logo {
-        max-width:8rem;
+        max-width:3.1rem;
         float:right;
+        display:none;
     }
     .active {
         border-bottom:2px #000 solid;
@@ -86,53 +91,104 @@
         border-color:red;
     }
     body {
-        font-family:"EB Garamond", serif;
-        
         line-height:1.4;
     }
-    #mail,
+    #mail, .lead, .work-role,
     h1, h2, h3,
     .langs {
         font-family:"Public Sans", sans-serif;
-    }
-    .lead,
-    h1,
-    .work-role {
-        font-family:"Public Sans", sans-serif;
-        font-style:italic;
     }
     #about a {
         color:blue;
         padding:0 .125rem;
         text-decoration:underline;
     }
-    h1, h3 {
-        font-weight:normal;
-    }
     h1 {
-      font-weight:500;
-    }
-    h1 {
-        font-style:normal;
-        font-size:7rem;
+        font-weight:600;
+        font-size:2.8rem;
         margin:1.5rem 0 0rem;
         line-height:.9;
     }
     .lead {
+        font-style:italic;
         font-size:1.375rem;
         margin-top:.625rem;
     }
+    .lead .role {
+        margin-right:.5rem;
+    }
     h2 {
         margin:4.5rem 0 2rem;
-        /*
-        font-size:3.25rem;
-        font-weight:400;
-        line-height:1;
-        font-family:"IBM Plex Serif";
-        font-style:italic;
-        */
     }
 
+    #services,
+    #about {
+        font-family:"IBM Plex serif", serif;
+        margin:0 auto 2rem;
+    }
+
+    h2,
+    #services h3 {
+        font-size: 1.65rem;
+        font-family:"Public Sans", sans-serif;
+        font-weight:bold;
+        line-height:1.1;
+        margin:.5rem 0;
+    }
+    #services {
+        margin:4rem 0 0;
+    }
+    #services img {
+       max-width:80%;
+    }
+    .right-i {
+        text-align:right;
+    }
+    .right-i img {
+        margin:4rem 0 0;
+    }
+    #about {
+        margin-top:5rem;
+    }
+    #services,
+    #about {
+        font-size:1.1rem;
+        line-height:1.6;
+    }
+    #about {
+        font-size:1.5rem;
+        line-height:1.7;
+    }
+    #about strong {
+        font-weight: 600;
+    }
+    #services ul {
+        margin:0;
+        margin:0 0 2rem;
+        margin-left:0rem;
+        padding-left:1.25rem;
+    }
+    #mail {
+        display:none;
+        font-size:2.125rem;
+        margin:3.5rem 0 1rem;
+        text-align:left;
+    }
+    .hand {
+        font-size:3.75rem;
+        line-height:100%;
+        vertical-align: middle;
+        margin-right:2.25rem;
+    }
+    #mail a {
+        border: .3rem solid;
+        padding: 1.25rem 1.75rem;
+        border-color:green;
+        color: green;
+    }
+    #mail a:hover {
+        color:red;
+    }
     #work {
         margin:4.5rem 0 2rem;
     }
@@ -162,17 +218,8 @@
     img:hover {
         opacity:.9;
     }
-    #services,
-    #about {
-        font-family:"IBM Plex serif", serif;
-        font-size:1.625rem;
-        line-height:1.325;
-        margin:0 auto 2rem;
-    }
-
     .experiences {
-        width:25rem;
-        list-style-position:outside;
+        width:100%;
         list-style:none;
         padding:0;
         font-size:1.125rem;
@@ -204,9 +251,6 @@
         font-family:"Public Sans";
         font-weight:600;
     }
-    #mail {
-        margin:0 0 1rem;
-    }
     .rg-s img {
         vertical-align:middle;
         height:1rem;
@@ -217,14 +261,30 @@
       border:0;
     }
     @media(max-width:26rem) {
-      h1 {
-        font-size:5rem;
-      }
       #about img {
         max-width:100%;
       }
     }
     @media(min-width:55rem) {
+        #services,
+        #about {
+            font-size:1.35rem;
+            line-height:1.6;
+        }
+        #services h3 {
+            font-size:1.9rem;
+        }
+        #services ul {
+            padding-left:2.5rem;
+        }
+        #services ul li {
+        padding-left:.375rem;
+        }
+        .logo {
+            max-width:8rem;
+            float:right;
+            display:inline;
+        }
         #mail > img {
             height:2.375rem;
         }
@@ -232,10 +292,17 @@
         }
         h1 {
             line-height:1;
-            font-size:6rem;
+            font-size:5.5rem;
         }
         .lead {
             margin-top:.375rem;
+        }
+        #services {
+            display:grid;
+            grid-template-columns:60% 40%;
+        }
+        .experiences {
+            max-width:25rem;
         }
         .work-title,
         .exp-title {
@@ -246,9 +313,11 @@
             font-size:1.25rem;
         }
         #experience {
+          margin-top:6rem;       
+        }
+        .experience-grid {
           display:grid;
           grid-template-columns: 1fr 1fr;
-          margin-top:6rem;       
         }
         .experiences {
             overflow-x:auto;
@@ -277,71 +346,6 @@
     }
     @media(min-width:90rem) {
     }
-    h2,
-    #services h3 {
-        font-family:"Public Sans", sans-serif;
-        font-weight:bold;
-        margin:.5rem 0;
-        font-size:1.9rem;
-    }
-    #services {
-        margin:4rem 0 0;
-        display:grid;
-        grid-template-columns:60% 40%;
-    }
-    #services img {
-       max-width:80%;
-    }
-    .right-i {
-        text-align:right;
-    }
-    .right-i img {
-        margin:4rem 0 0;
-    }
-    #about {
-        margin-top:5rem;
-    }
-    #services,
-    #about {
-        font-size:1.35rem;
-        line-height:1.6;
-    }
-    #about {
-        font-size:1.5rem;
-        line-height:1.7;
-    }
-    #about strong {
-        font-weight: 600;
-    }
-    #services ul {
-        margin:0;
-        margin:0 0 2rem;
-        margin-left:0rem;
-        padding-left:2.5rem;
-    }
-    #services ul li {
-      padding-left:.375rem;
-    }
-    #mail {
-        font-size:2.125rem;
-        margin-top:3.5rem;
-        text-align:left;
-    }
-    .hand {
-        font-size:3.75rem;
-        line-height:100%;
-        vertical-align: middle;
-        margin-right:2.25rem;
-    }
-    #mail a {
-        border: .3rem solid;
-        padding: 1.25rem 1.75rem;
-        border-color:green;
-        color: green;
-    }
-    #mail a:hover {
-        color:red;
-    }
 </style>
 <title>{{.Info.Title}} 🎥 - {{.Info.PrintJobs}}</title>
 <main>
@@ -352,11 +356,17 @@
     {{end}}
     </nav>
 
-<h1><a href="{{.Home}}">{{.Info.Title}} &nbsp;</a>
+<h1><a href="{{.Home}}">{{.Info.Title}}</a>
 
-<img class="logo" src="/static/logo.svg">
+<a href="{{.Home}}"><img class="logo" src="/static/logo.svg"></a>
 </h1>
-<div class="lead">{{.Info.PrintJobs}}</div>
+<div class="lead">
+    {{range $i, $x := .Info.Jobs}}
+    <span class="role">
+        {{$x}}{{if and (eq $i 0) (gt (len $.Info.Jobs) 0)}},{{end}}
+    </span>
+    {{end}}
+    </div>
 
 
 <section id="services">
@@ -409,8 +419,11 @@
 
 
 
-<h2>Projects</h2>
 <div id="experience">
+    <!--
+<h2>Projects</h2>
+    -->
+    <div class="experience-grid">
     {{range .Experience}}
     <div class="experience">
     <h3 class="year">{{.Year}}</h3>
@@ -426,6 +439,7 @@
         </ul>
     </div>
     {{end}}
+    </div>
 </div>
 <br>
 <br>
