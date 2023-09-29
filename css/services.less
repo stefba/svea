@@ -1,0 +1,101 @@
+
+#services,
+#about {
+    font-family:"IBM Plex serif", serif;
+    margin:0 auto 2rem;
+}
+
+h2,
+#services h3 {
+    font-size: 1.9rem;
+    font-family:"Public Sans", sans-serif;
+    font-weight:bold;
+    margin:.5rem 0;
+}
+#services {
+    margin:4rem 0 0;
+}
+#services img {
+   max-width:80%;
+}
+.right-i {
+    text-align:right;
+}
+.right-i img {
+    margin:4rem 0 0;
+}
+#about {
+    margin-top:5rem;
+}
+#services,
+#about {
+    font-size:1.15rem;
+    line-height:1.6;
+}
+#about {
+    font-size:1.5rem;
+    line-height:1.7;
+}
+#about strong {
+    font-weight: 600;
+}
+#services ul {
+    margin:0;
+    margin:0 0 2rem;
+    margin-left:0rem;
+    padding-left:1.25rem;
+}
+#services ul li {
+  padding-left:.375rem;
+}
+#mail {
+    font-size:2.125rem;
+    margin:3.5rem 0 1rem;
+    text-align:left;
+}
+.hand {
+    font-size:3.75rem;
+    line-height:100%;
+    vertical-align: middle;
+    margin-right:2.25rem;
+}
+#mail a {
+    border: .3rem solid;
+    padding: 1.25rem 1.75rem;
+    border-color:green;
+    color: green;
+}
+#mail a:hover {
+    color:red;
+}
+#about .img-link {
+    padding:0;
+    border:0;
+  }
+  #about a {
+    color:blue;
+    padding:0 .125rem;
+    text-decoration:underline;
+}
+#mail > img {
+    height:2.375rem;
+}
+  @media(max-width:26rem) {
+    #about img {
+      max-width:100%;
+    }
+  }
+  @media(min-width:55rem) {
+    #services,
+    #about {
+        font-size:1.35rem;
+        line-height:1.6;
+    }
+    #service ul {
+        padding-left:2.5rem;
+    }
+    #services {
+        display:grid;
+        grid-template-columns:60% 40%;
+    }
+}

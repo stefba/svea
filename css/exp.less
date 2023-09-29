@@ -1,0 +1,51 @@
+.experiences {
+    width:25rem;
+    list-style-position:outside;
+    list-style:none;
+    padding:0;
+    font-size:1.125rem;
+    font-family:"Public Sans", monospace;
+}
+.exp-title,
+.work-title {
+    font-weight:600;
+}
+
+.exp-extra {
+    font-family: "IBM Plex Serif", serif;
+    display:block;
+}
+.exp-role, .exp-type {
+    margin-top:.125rem;
+    font-size:1.125rem;
+    display:block;
+}
+.entry {
+    margin:0 0 1rem;
+}
+.year {
+    font-family: "IBM Plex Serif", serif;
+    font-style:normal;
+    font-size:2.5rem;
+    margin:2.5rem 0 1rem;
+}
+@media(min-width:55rem) {
+    .work-title,
+    .exp-title {
+        font-size:1.4375rem;
+    }
+    .work-role,
+    .exp-role {
+        font-size:1.25rem;
+    }
+    #experience {
+      margin-top:6rem;       
+    }
+    .experience-grid {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .experiences {
+        overflow-x:auto;
+    }
+}
