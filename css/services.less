@@ -50,26 +50,27 @@ h2,
   padding-left:.375rem;
 }
 #mail {
-    font-size:2.125rem;
+    font-size:1.75rem;
     margin:3.5rem 0 1rem;
-    text-align:left;
-    display: none;
+    text-align:center;
 }
+#mail a {
+    color:black;
+    font-weight:600;
+    border: .2rem solid;
+    padding: 1rem 1.25rem;
+}
+#mail a:hover {
+    background: yellow;
+}
+/*
 .hand {
     font-size:3.75rem;
     line-height:100%;
     vertical-align: middle;
     margin-right:2.25rem;
 }
-#mail a {
-    border: .3rem solid;
-    padding: 1.25rem 1.75rem;
-    border-color:green;
-    color: green;
-}
-#mail a:hover {
-    color:red;
-}
+*/
 #about .img-link {
     padding:0;
     border:0;
@@ -88,6 +89,14 @@ h2,
     }
   }
   @media(min-width:55rem) {
+    #mail {
+        text-align:left;
+        font-size:2.125rem;
+    }
+    #mail a {
+        padding: 1.25rem 1.75rem;
+        border: .3rem solid;
+    }
     h2,
     #services h3 {
         font-size: 1.9rem;

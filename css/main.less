@@ -2,43 +2,30 @@
     --font-sans: "Public Sans", sans-serif;
     --font-serif: "IBM Plex Serif", serif;
 }
+
+a {
+    color:blue;
+    text-decoration: none;
+}
+
 body {
     font-family: var(--font-serif);
+    line-height:1.4;
     hyphens: auto;
     -webkit-hyphens: auto;
 }
+
+.langs a,
+h1 a {
+    color:black;
+}
+
 h1 a:hover {
     color:gray
 }
-.langs a,
-h1 a,
-.work-title a {
-    text-decoration:none;
-}
 
-a {
-    color:orange;
-    color:black;
-    text-decoration:none;
-}
-
-#about a,
-.experiences a {
-    text-decoration: underline;;
-    text-decoration-color: #ffc400;
-    text-decoration-thickness: 2px;
-    //border-bottom:2px #ffc400 solid;
-}
-.credits a:hover,
-#about a:hover,
-.experiences a:hover {
-    border-color:red;
-}
-body {
-    line-height:1.4;
-}
-#mail, .lead, .work-role,
 h1, h2, h3,
+.lead, #mail, .work-role,
 .langs {
     font-family: var(--font-sans);
 }
