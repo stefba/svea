@@ -1,36 +1,43 @@
-
 h2,
 #services h3 {
     font-size: 1.4rem;
     line-height: 1.1;
     font-family: var(--font-sans);
-    font-weight:600;
-    margin:.5rem 0;
+    font-weight: 600;
+    margin: .5rem 0;
 }
+
 #services,
 #about {
-    margin:0 auto 2rem;
+    margin: 0 auto 2rem;
 }
+
 #services,
 #about {
-    font-size:1.1rem;
-    line-height:1.6;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
+
 #services {
-    margin:4rem 0 0;
+    margin: 4rem 0 0;
 }
+
 #services img {
-   max-width:80%;
+    max-width: 80%;
 }
+
 .right-i {
-    text-align:right;
+    text-align: right;
 }
+
 .right-i img {
-    margin:4rem 0 0;
+    margin: 4rem 0 0;
 }
+
 #about {
-    margin-top:5rem;
+    margin-top: 5rem;
 }
+
 /*
 #about {
     font-size:1.5rem;
@@ -40,29 +47,35 @@ h2,
 #about strong {
     font-weight: 600;
 }
+
 #services ul {
-    margin:0;
-    margin:0 0 2rem;
-    margin-left:0rem;
-    padding-left:1.25rem;
+    margin: 0;
+    margin: 0 0 2rem;
+    margin-left: 0rem;
+    padding-left: 1.25rem;
 }
+
 #services ul li {
-  padding-left:.375rem;
+    padding-left: .375rem;
 }
+
 #mail {
-    font-size:1.75rem;
-    margin:3.5rem 0 1rem;
-    text-align:center;
+    font-size: 1.75rem;
+    margin: 3.5rem 0 1rem;
+    text-align: center;
 }
+
 #mail a {
-    color:black;
-    font-weight:600;
+    color: black;
+    font-weight: 600;
     border: .2rem solid;
     padding: 1rem 1.25rem;
 }
+
 #mail a:hover {
     background: yellow;
 }
+
 /*
 .hand {
     font-size:3.75rem;
@@ -72,45 +85,66 @@ h2,
 }
 */
 #about .img-link {
-    padding:0;
-    border:0;
-  }
-  #about a {
-    color:blue;
-    padding:0 .125rem;
-    text-decoration:underline;
+    padding: 0;
+    border: 0;
 }
-#mail > img {
-    height:2.375rem;
+
+#about a {
+    color: blue;
+    padding: 0 .125rem;
+    text-decoration: underline;
 }
-  @media(max-width:26rem) {
+
+#mail>img {
+    height: 2.375rem;
+}
+
+#samples {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:2rem;
+}
+
+#samples video {
+    max-width:100%;
+}
+
+@media(max-width:26rem) {
     #about img {
-      max-width:100%;
+        max-width: 100%;
     }
-  }
-  @media(min-width:55rem) {
+}
+
+@media(min-width:55rem) {
     #mail {
-        text-align:left;
-        font-size:2.125rem;
+        text-align: left;
+        font-size: 2.125rem;
     }
+
     #mail a {
         padding: 1.25rem 1.75rem;
         border: .3rem solid;
     }
+
     h2,
     #services h3 {
         font-size: 1.9rem;
     }
+
     #services,
     #about {
-        font-size:1.35rem;
-        line-height:1.6;
+        font-size: 1.35rem;
+        line-height: 1.6;
     }
+
     #service ul {
-        padding-left:2.5rem;
+        padding-left: 2.5rem;
     }
-    #services {
-        display:grid;
-        grid-template-columns:60% 40%;
+
+
+    #services>ul {
+        gap: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }

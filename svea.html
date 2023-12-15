@@ -6,7 +6,7 @@
 <link rel="alternate" hreflang="de" href="https://sveaimmel.com/de/">
 <link rel="alternate" hreflang="en" href="https://sveaimmel.com">
 <link rel="alternate" hreflang="x-default" href="https://sveaimmel.com">
-<link rel="stylesheet" href="/static/main.css">
+{{template "css"}}
 <title>{{.Info.Title}} 🎥 – {{.Info.PrintJobs}}</title>
 <main>
 
@@ -29,16 +29,23 @@
 
 
 <section id="services">
-    <div class="col">
     {{.Services}}
-    </div>
-    <div class="right-i">
+</section>
         <!--
+    <div class="right-i">
     <a href="/about/svea.jpg" class="img-link" target="_blank">
 👉 
-        -->
         <img alt="Svea Immel" src="/about/svea.jpg">
     </div>
+        -->
+
+<section id="samples">
+<video controls loop>
+    <source src="/samples/sve1.mp4">
+</video>
+<video controls loop>
+    <source src="/samples/sve1.mp4">
+</video>
 </section>
 
 <div id="mail">

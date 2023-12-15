@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+	"os"
 	"text/template"
 )
 
@@ -87,6 +89,22 @@ func loadTemplate() error {
 	if err != nil {
 		return err
 	}
+	css, err := loadCSS()
+	if err != nil {
+		return err
+	}
+	t, err = t.Parse(fmt.Sprintf(`{{define "css"}}<style>%v</style>{{end}}`, css))
+	if err != nil {
+		return err
+	}
 	tmpl = t
 	return nil
+}
+
+func loadCSS() (string, error) {
+	b, err := os.ReadFile(root + "/css/dist/main.css")
+	if err != nil {
+		return "", err
+	}
+	return string(b), nil
 }

@@ -2,8 +2,8 @@ package main
 
 import (
 	//"strings"
-	"fmt"
 	"flag"
+	"fmt"
 	"log"
 	"net/http"
 	"path/filepath"
@@ -18,7 +18,6 @@ var siteDe = &site{}
 var tmpl = &template.Template{}
 
 func main() {
-
 	permaReload := flag.Bool("reload", false, "reload files on every request")
 	path := flag.String("path", root+"", "set the root path of this app")
 	flag.Parse()
@@ -48,6 +47,7 @@ func reload(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprint(w, err.Error())
 		return
 	}
+	// give feedback
 	fmt.Fprint(w, "did")
 }
 
@@ -59,7 +59,7 @@ func renderEn(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	if filepath.Ext(r.URL.Path) == ".jpg" {
+	if isMedia(r.URL.Path) {
 		http.ServeFile(w, r, root+"/data"+r.URL.Path)
 		return
 	}
@@ -77,7 +77,7 @@ func renderDe(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	if filepath.Ext(r.URL.Path) == ".jpg" {
+	if isMedia(r.URL.Path) {
 		http.ServeFile(w, r, root+"/data"+r.URL.Path)
 		return
 	}
@@ -85,6 +85,14 @@ func renderDe(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Println(err)
 	}
+}
+
+func isMedia(path string) bool {
+	switch filepath.Ext(path) {
+	case ".jpg", ".mp4":
+		return true
+	}
+	return false
 }
 
 func serveGoogle(w http.ResponseWriter, r *http.Request) {
@@ -98,6 +106,7 @@ func serveRobots(w http.ResponseWriter, r *http.Request) {
 func serveStatic(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, root+r.URL.Path)
 }
+
 /*
 func readSort() ([]string, error) {
 	b, err := ioutil.ReadFile(root + "/data/sort")
